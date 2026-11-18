@@ -28,16 +28,16 @@
       --vin-blue-link: #1d63dc;
       --vin-blue-hover: #154bb3;
       --vin-red-accent: #f43f5e;
-      --footer-left-blue: #134d8c;
-      --footer-right-blue: #2a518a;
+      --cmit-footer-navy: #122649;
+      --cmit-footer-panel: #0e1f3d;
       --text-main: #1e293b;
       --text-body: #475569;
       --text-muted: #64748b;
       --bg-white: #ffffff;
       --bg-light: #f8fafc;
       --border-light: #e2e8f0;
-      --card-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
-      --card-shadow-hover: 0 10px 28px rgba(15, 23, 42, 0.11);
+      --card-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+      --card-shadow-hover: 0 10px 24px rgba(15, 23, 42, 0.12);
     }
 
     * {
@@ -69,24 +69,32 @@
       text-decoration: underline;
     }
 
-    .container {
+    /* Full-width container for Hero Header */
+    .hero-container {
       max-width: 1020px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
+    /* Compact 820px container for ALL Main Content Sections (matching Overview) */
+    .main-compact-container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
     /* ==========================================================================
-       HERO SECTION (VinUni Logo + Highlighted VINMATICS-SC Title + Affiliations)
+       HERO SECTION (Full-Width Band at Top)
        ========================================================================== */
     .hero-section {
       background-color: var(--bg-white);
-      padding: 2.5rem 0 3.25rem;
+      padding: 2.35rem 0 3rem;
       text-align: center;
       border-bottom: 1px solid var(--border-light);
     }
 
     .vinuni-logo-wrap {
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.6rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -109,13 +117,13 @@
     }
 
     .publication-title {
-      font-size: clamp(1.85rem, 3.7vw, 2.75rem);
+      font-size: clamp(1.75rem, 3.5vw, 2.65rem);
       font-weight: 800;
       color: #1e293b;
-      line-height: 1.24;
+      line-height: 1.25;
       letter-spacing: -0.02em;
-      max-width: 940px;
-      margin: 0 auto 1.45rem;
+      max-width: 920px;
+      margin: 0 auto 1.35rem;
     }
 
     .title-acronym {
@@ -131,9 +139,9 @@
       justify-content: center;
       align-items: center;
       gap: 0.6rem 1.75rem;
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       font-weight: 500;
-      margin-bottom: 2rem;
+      margin-bottom: 1.85rem;
     }
 
     .affiliation-item {
@@ -160,13 +168,13 @@
       text-decoration: underline;
     }
 
-    /* Action Buttons Row (Dark Rounded Pill Buttons) */
+    /* Action Buttons Row */
     .publication-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
+      gap: 0.7rem;
+      margin-top: 0.4rem;
     }
 
     .nav-pill-btn {
@@ -175,9 +183,9 @@
       gap: 0.55rem;
       background-color: var(--vin-dark-btn);
       color: #ffffff !important;
-      font-size: 0.98rem;
+      font-size: 0.95rem;
       font-weight: 600;
-      padding: 0.68rem 1.35rem;
+      padding: 0.64rem 1.3rem;
       border-radius: 10px;
       text-decoration: none !important;
       transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
@@ -191,14 +199,14 @@
     }
 
     .nav-pill-btn i {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
     /* ==========================================================================
        SECTIONS & HEADINGS
        ========================================================================== */
     .section-band {
-      padding: 4rem 0;
+      padding: 3.5rem 0;
     }
 
     .section-band.bg-light {
@@ -213,12 +221,12 @@
 
     .section-title {
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 700;
       color: #334155;
-      margin-bottom: 2.25rem;
+      margin-bottom: 2rem;
       position: relative;
-      padding-bottom: 0.75rem;
+      padding-bottom: 0.7rem;
     }
 
     .section-title::after {
@@ -227,26 +235,25 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 54px;
+      width: 52px;
       height: 3px;
       background-color: var(--vin-red-accent);
       border-radius: 2px;
     }
 
     /* ==========================================================================
-       PROJECT OVERVIEW
+       PROJECT OVERVIEW (820px width)
        ========================================================================== */
     .overview-content {
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 1.08rem;
+      width: 100%;
+      font-size: 1.04rem;
       color: var(--text-body);
       line-height: 1.8;
       text-align: justify;
     }
 
     .overview-content p {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.15rem;
     }
 
     .overview-content p:last-child {
@@ -260,468 +267,480 @@
     }
 
     /* ==========================================================================
-       METHODOLOGY & ARCHITECTURE
+       RESEARCH FRAMEWORK (Compact 820px Width + Vertical Flow Downward)
        ========================================================================== */
     .architecture-box {
+      width: 100%;
       background: var(--bg-white);
       border: 1px solid var(--border-light);
-      border-radius: 14px;
-      padding: 2rem;
+      border-radius: 12px;
+      padding: 1.5rem 1.25rem;
       box-shadow: var(--card-shadow);
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.75rem;
     }
 
     .arch-svg-wrapper {
       width: 100%;
-      overflow-x: auto;
     }
 
     .arch-caption {
-      margin-top: 1.1rem;
-      font-size: 0.92rem;
+      margin-top: 1rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
       text-align: center;
-      max-width: 840px;
-      margin-left: auto;
-      margin-right: auto;
+      line-height: 1.55;
     }
 
-    .wp-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.5rem;
+    /* Vertical Stack of Work Packages inside the 820px container */
+    .wp-vertical-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
     }
 
-    .wp-card {
+    .wp-card-row {
       background: var(--bg-white);
       border: 1px solid var(--border-light);
-      border-radius: 12px;
-      padding: 1.5rem;
+      border-left: 4px solid var(--vin-navy);
+      border-radius: 10px;
+      padding: 1.25rem 1.4rem;
       box-shadow: var(--card-shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .wp-card:hover {
+    .wp-card-row:hover {
       transform: translateY(-2px);
       box-shadow: var(--card-shadow-hover);
     }
 
+    .wp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.45rem;
+    }
+
     .wp-tag {
       display: inline-block;
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--vin-blue-link);
       background: #eff6ff;
-      padding: 0.22rem 0.65rem;
-      border-radius: 6px;
-      margin-bottom: 0.65rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 5px;
     }
 
-    .wp-card h4 {
-      font-size: 1.08rem;
+    .wp-card-row h4 {
+      font-size: 1.04rem;
       font-weight: 700;
       color: var(--text-main);
-      margin-bottom: 0.5rem;
       line-height: 1.35;
     }
 
-    .wp-card p {
+    .wp-card-row p {
       font-size: 0.94rem;
       color: var(--text-body);
-      line-height: 1.6;
+      line-height: 1.62;
     }
 
     /* ==========================================================================
-       PUBLICATIONS SECTION
+       PUBLICATIONS SECTION (820px Width)
        ========================================================================== */
     .publications-empty-card {
-      max-width: 760px;
-      margin: 0 auto;
+      width: 100%;
       background: var(--bg-white);
       border: 1px solid var(--border-light);
       border-radius: 12px;
-      padding: 2rem;
+      padding: 1.85rem;
       text-align: center;
       color: var(--text-muted);
-      font-size: 1.02rem;
+      font-size: 0.98rem;
       box-shadow: var(--card-shadow);
     }
 
     .publications-empty-card i {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: #94a3b8;
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.55rem;
       display: block;
     }
 
     /* ==========================================================================
-       TEAM MEMBERS (Version 3 Layout — 225px Cards & 128px Circular Portraits)
+       TEAM MEMBERS (CMIT Square Edge-to-Edge Cards + Horizontal Slider Row)
        ========================================================================== */
     .team-group-heading {
       text-align: center;
-      font-size: 1.35rem;
+      font-size: 1.28rem;
       font-weight: 700;
       color: #334155;
-      margin: 1.5rem 0 1.65rem;
+      margin: 0.5rem 0 1.35rem;
     }
 
-    .team-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.75rem;
-      margin-bottom: 1rem;
+    .team-slider-wrap {
+      position: relative;
+      width: 100%;
+      margin-bottom: 2.5rem;
     }
 
-    .team-card {
+    .team-horizontal-track {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(175px, 1fr));
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      padding: 0.25rem 0.1rem 0.6rem;
+    }
+
+    .team-horizontal-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Square-portrait CMIT style card */
+    .cmit-person-card {
       background: var(--bg-white);
-      border: 1px solid #f1f5f9;
-      border-radius: 14px;
-      width: 225px;
-      padding: 1.75rem 1.15rem 1.5rem;
-      text-align: center;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
       box-shadow: var(--card-shadow);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      text-align: center;
     }
 
-    .team-card:hover {
+    .cmit-person-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--card-shadow-hover);
     }
 
-    .team-avatar-link {
+    /* Square edge-to-edge photo (No circular crop) */
+    .cmit-photo-link {
       display: block;
-      width: 128px;
-      height: 128px;
-      border-radius: 50%;
+      width: 100%;
+      aspect-ratio: 1 / 1;
       overflow: hidden;
-      margin-bottom: 1.1rem;
-      background-color: #f1f5f9;
-      border: 2px solid #f8fafc;
-      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
-      flex-shrink: 0;
+      background-color: #e2e8f0;
+      position: relative;
     }
 
-    .team-avatar-img {
+    .cmit-photo-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
-      transition: transform 0.25s ease;
+      transition: transform 0.3s ease;
     }
 
-    .team-card:hover .team-avatar-img {
-      transform: scale(1.04);
+    .cmit-person-card:hover .cmit-photo-img {
+      transform: scale(1.03);
     }
 
-    .team-member-name {
-      font-size: 1.04rem;
-      font-weight: 600;
-      color: var(--vin-blue-link);
+    .cmit-card-body {
+      padding: 0.95rem 0.65rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .cmit-person-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1e293b;
       margin-bottom: 0.35rem;
-      line-height: 1.35;
+      line-height: 1.3;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .cmit-person-name:hover {
+      color: var(--vin-blue-link);
       text-decoration: none;
     }
 
-    .team-member-name:hover {
-      color: var(--vin-blue-hover);
-      text-decoration: underline;
+    .cmit-person-role {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #3b5998;
+      margin-bottom: 0.2rem;
     }
 
-    .team-member-role {
-      font-size: 0.88rem;
-      color: #475569;
-      font-weight: 400;
+    .cmit-person-dept {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* Slider Navigation Arrows (< and > like CMIT) */
+    .slider-arrow-btn {
+      position: absolute;
+      top: 38%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      background: rgba(100, 116, 139, 0.78);
+      color: #ffffff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.2s ease;
+    }
+
+    .slider-arrow-btn:hover {
+      background: var(--vin-navy);
+    }
+
+    .slider-arrow-btn.prev {
+      left: -16px;
+    }
+
+    .slider-arrow-btn.next {
+      right: -16px;
+    }
+
+    /* Researchers Subsection Below Faculty */
+    .researchers-box {
+      background: var(--bg-light);
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 1.35rem 1.25rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.94rem;
     }
 
     /* ==========================================================================
-       VINUNIVERSITY CAMPUS HERO FOOTER (Version 3 / CVMAIL Style)
+       COMPACT CMIT-STYLE FOOTER (Dark Navy + Official CMIT Logo + ">" Chevrons)
        ========================================================================== */
-    .vinuni-campus-footer {
+    .cmit-footer {
       position: relative;
-      background-color: var(--footer-right-blue);
+      background-color: var(--cmit-footer-navy);
       color: #ffffff;
       overflow: hidden;
-      min-height: 310px;
-      display: flex;
-      align-items: stretch;
     }
 
-    /* Right-side blurred/faded VinUniversity Campus Background Image */
-    .footer-campus-bg {
+    /* Subtle Faded Campus Background on the Right */
+    .cmit-footer-bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://admissions.vinuni.edu.vn/wp-content/uploads/2022/12/DSC05383-scaled.jpg'), url('https://vinuni.edu.vn/wp-content/uploads/2020/06/VinUni-Campus-1.jpg');
+      background-image: url('https://admissions.vinuni.edu.vn/wp-content/uploads/2022/12/DSC05383-scaled.jpg');
       background-size: cover;
-      background-position: right bottom;
+      background-position: right center;
       background-repeat: no-repeat;
-      opacity: 0.32;
+      opacity: 0.12;
       mix-blend-mode: luminosity;
+      pointer-events: none;
       z-index: 1;
     }
 
-    /* Subtle blue tint overlay to guarantee crisp white text readability */
-    .footer-campus-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(19, 77, 140, 0.92) 0%, rgba(42, 81, 138, 0.68) 38%, rgba(42, 81, 138, 0.52) 100%);
-      z-index: 2;
-    }
-
-    /* Angled Solid Dark-Blue Left Panel (Diagonal Split like Image 2) */
-    .footer-left-wedge {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 36%;
-      min-width: 310px;
-      background-color: var(--footer-left-blue);
-      clip-path: polygon(0 0, 100% 0, 74% 100%, 0% 100%);
-      z-index: 3;
-    }
-
-    .footer-inner {
+    .cmit-footer-inner {
       position: relative;
-      z-index: 4;
-      width: 100%;
-      max-width: 1140px;
+      z-index: 2;
+      max-width: 1060px;
       margin: 0 auto;
-      padding: 3rem 2rem 2.5rem;
+      padding: 2.1rem 1.5rem 1.9rem;
       display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 3rem;
+      grid-template-columns: 250px 155px 165px 1fr;
+      gap: 1.75rem;
       align-items: start;
     }
 
-    /* Left Column: Emblem + Acronym + Copyright */
-    .footer-brand-col {
+    /* Left Column: Official CMIT Logo + Compact Copyright */
+    .footer-col-brand {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding-left: 1rem;
     }
 
-    .footer-brand-logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 1.65rem;
+    .footer-cmit-logo-link {
+      display: inline-block;
+      margin-bottom: 0.65rem;
       text-decoration: none !important;
-      color: #ffffff !important;
     }
 
-    .footer-v-emblem {
-      width: 56px;
-      height: 48px;
-      margin-bottom: 0.45rem;
+    .footer-cmit-logo-img {
+      height: 54px;
+      width: auto;
+      max-width: 210px;
+      object-fit: contain;
+      border-radius: 4px;
+      display: block;
     }
 
-    .footer-brand-acronym {
-      font-size: 1.55rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
+    .footer-org-subtitle {
+      font-size: 0.8rem;
+      font-weight: 600;
       color: #ffffff;
-      line-height: 1.15;
-    }
-
-    .footer-brand-sub {
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.88);
-      margin-top: 0.2rem;
-      max-width: 220px;
-      line-height: 1.3;
-    }
-
-    .footer-copyright {
-      font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.92);
-      line-height: 1.6;
-    }
-
-    .footer-copyright p {
       margin-bottom: 0.45rem;
+      line-height: 1.35;
     }
 
-    .footer-copyright a {
-      color: rgba(255, 255, 255, 0.92);
+    .footer-copy-line {
+      font-size: 0.76rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+    }
+
+    .footer-copy-line a {
+      color: rgba(255, 255, 255, 0.9);
       text-decoration: none;
     }
 
-    .footer-copyright a:hover {
+    .footer-copy-line a:hover {
       color: #ffffff;
       text-decoration: underline;
     }
 
-    /* Right Column: Navigation Links + Contact Info */
-    .footer-right-col {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(140px, 180px)) 1fr;
-      gap: 2rem;
-      padding-top: 0.35rem;
-    }
-
-    .footer-nav-list {
+    /* Navigation Columns with ">" Chevrons (CMIT Style) */
+    .footer-chevron-list {
       list-style: none;
+      padding-top: 0.15rem;
     }
 
-    .footer-nav-list li {
-      margin-bottom: 0.85rem;
+    .footer-chevron-list li {
+      margin-bottom: 0.65rem;
     }
 
-    .footer-nav-list a {
+    .footer-chevron-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer-chevron-list a {
       color: #ffffff !important;
-      font-size: 0.98rem;
-      font-weight: 500;
+      font-size: 0.9rem;
+      font-weight: 400;
       text-decoration: none !important;
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      opacity: 0.95;
+      opacity: 0.92;
       transition: opacity 0.2s ease, transform 0.15s ease;
     }
 
-    .footer-nav-list a::before {
-      content: "•";
-      font-size: 1.05rem;
+    .footer-chevron-list a i {
+      font-size: 0.72rem;
       color: rgba(255, 255, 255, 0.85);
     }
 
-    .footer-nav-list a:hover {
+    .footer-chevron-list a:hover {
       opacity: 1;
       transform: translateX(3px);
     }
 
-    /* Contact Section in Footer */
-    .footer-contact-box {
-      color: #ffffff;
+    /* Contact Column */
+    .footer-col-contact {
+      padding-top: 0.1rem;
+      padding-right: 2.2rem;
     }
 
-    .footer-contact-title {
-      font-size: 1.02rem;
+    .footer-contact-heading {
+      font-size: 0.96rem;
       font-weight: 700;
-      margin-bottom: 0.65rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
       color: #ffffff;
+      margin-bottom: 0.55rem;
     }
 
-    .footer-contact-title::before {
-      content: "•";
-      color: rgba(255, 255, 255, 0.85);
+    .footer-contact-address {
+      font-size: 0.86rem;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0.5rem;
     }
 
-    .footer-contact-text {
-      font-size: 0.92rem;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.92);
-      margin-bottom: 0.65rem;
+    .footer-contact-mail {
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.95);
     }
 
-    .footer-contact-email {
-      font-size: 0.92rem;
-      color: #ffffff;
-      margin-bottom: 1rem;
-    }
-
-    .footer-contact-email a {
+    .footer-contact-mail a {
       color: #ffffff !important;
-      font-weight: 600;
+      text-decoration: none !important;
+    }
+
+    .footer-contact-mail a:hover {
       text-decoration: underline !important;
-      text-underline-offset: 3px;
     }
 
-    .footer-social-icons {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      margin-top: 0.5rem;
-    }
-
-    .footer-social-icons a {
-      color: #ffffff !important;
-      font-size: 1.2rem;
-      opacity: 0.92;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    .footer-social-icons a:hover {
-      opacity: 1;
-      transform: translateY(-2px);
-    }
-
-    /* Bottom-right Outlined Square Scroll-to-Top Button (Matches Image 2) */
+    /* Floating Scroll-to-Top Button */
     .footer-scroll-top {
-      position: absolute;
-      bottom: 20px;
-      right: 24px;
-      width: 38px;
-      height: 38px;
-      border: 1.5px solid rgba(255, 255, 255, 0.78);
-      border-radius: 5px;
-      background: rgba(19, 77, 140, 0.35);
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 6px;
+      background: var(--cmit-footer-navy);
       color: #ffffff !important;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none !important;
-      z-index: 5;
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      z-index: 9999;
+      font-size: 1rem;
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(10px);
+
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.2s ease;
+    }
+
+    /* Show button when scrolling */
+    .footer-scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
     }
 
     .footer-scroll-top:hover {
-      background: rgba(255, 255, 255, 0.18);
+      background: #29466f;
       border-color: #ffffff;
-      transform: translateY(-2px);
     }
 
-    @media (max-width: 900px) {
-      .footer-left-wedge {
-        width: 100%;
-        clip-path: none;
-        opacity: 0.88;
-      }
-      .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .footer-brand-col {
-        padding-left: 0;
-      }
-      .footer-right-col {
+    @media (max-width: 860px) {
+      .cmit-footer-inner {
         grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
       }
-      .footer-contact-box {
+      .footer-col-contact {
         grid-column: 1 / -1;
+        padding-right: 0;
+      }
+      .slider-arrow-btn.prev {
+        left: 4px;
+      }
+      .slider-arrow-btn.next {
+        right: 4px;
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 600px) {
       .hero-section {
         padding: 1.75rem 0 2.25rem;
       }
       .publication-title {
-        font-size: 1.55rem;
+        font-size: 1.5rem;
       }
       .affiliations-list {
         flex-direction: column;
         gap: 0.35rem;
       }
-      .team-card {
-        width: 100%;
-        max-width: 260px;
-      }
-      .footer-right-col {
+      .cmit-footer-inner {
         grid-template-columns: 1fr;
         gap: 1.25rem;
       }
@@ -731,68 +750,70 @@
 <body id="top">
 
   <!-- ========================================================================
-       HERO SECTION (VinUni Logo + VINMATICS-SC Highlighted Title + Affiliations)
+       HERO SECTION (Full-Screen Width Header Band)
+       ======================================================================== -->
+  <header class="hero-section">
+    <div class="hero-container">
+      <!-- Official VinUniversity Logo linking to VinUniversity Welcome Page -->
+      <figure class="vinuni-logo-wrap">
+        <a href="https://admissions.vinuni.edu.vn/undergraduate/welcome/" target="_blank" rel="noopener" title="VinUniversity">
+          <img
+            class="vinuni-logo-img"
+            src="https://vinuni.edu.vn/wp-content/uploads/2020/06/Logo-VinUni.png"
+            onerror="this.onerror=null;this.src='https://vinuni-medical-mt.github.io/static/images/VinUniversity.webp';"
+            alt="VinUniversity Logo">
+        </a>
+      </figure>
+
+      <!-- Project Title with VINMATICS-SC Highlighted -->
+      <h1 class="publication-title">
+        <span class="title-acronym">VINMATICS-SC</span>: AI-Accelerated, Physics-Grounded Platform for Intelligent Discovery and Design of Supercapacitor Materials
+      </h1>
+
+      <!-- Numbered Institutions / Colleges -->
+      <div class="affiliations-list">
+        <span class="affiliation-item">
+          <sup>1</sup><a href="https://cecs.vinuni.edu.vn/" target="_blank" rel="noopener">College of Engineering and Computer Science</a>
+        </span>
+        <span class="affiliation-item">
+          <sup>2</sup><a href="https://cmit.vinuni.edu.vn/" target="_blank" rel="noopener">Center for Materials Innovation &amp; Technology</a>
+        </span>
+      </div>
+
+      <!-- Navigation Pill Buttons -->
+      <div class="publication-links">
+        <a href="#overview" class="nav-pill-btn">
+          <i class="fa-solid fa-file-lines"></i>
+          <span>Overview</span>
+        </a>
+        <a href="#methodology" class="nav-pill-btn">
+          <i class="fa-solid fa-diagram-project"></i>
+          <span>Framework</span>
+        </a>
+        <a href="#publications" class="nav-pill-btn">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Publications</span>
+        </a>
+        <a href="#team" class="nav-pill-btn">
+          <i class="fa-solid fa-users"></i>
+          <span>Team</span>
+        </a>
+        <a href="#contact-footer" class="nav-pill-btn">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN CONTENT (All sections aligned to the exact 820px Overview width)
        ======================================================================== -->
   <main>
-    <section class="hero-section">
-      <div class="container">
-        <!-- Official VinUniversity Logo linking to VinUniversity Welcome Page -->
-        <figure class="vinuni-logo-wrap">
-          <a href="https://admissions.vinuni.edu.vn/undergraduate/welcome/" target="_blank" rel="noopener" title="VinUniversity">
-            <img
-              class="vinuni-logo-img"
-              src="https://vinuni-medical-mt.github.io/static/images/VinUniversity.webp"
-              onerror="this.onerror=null;this.src='https://placehold.co/240x52/ffffff/1b365d?text=VINUNIVERSITY';"
-              alt="VinUniversity Logo">
-          </a>
-        </figure>
 
-        <!-- Project Title with VINMATICS-SC underlined in Crimson Red (Image 1) -->
-        <h1 class="publication-title">
-          <span class="title-acronym">VINMATICS-SC</span>: AI-Accelerated, Physics-Grounded Platform for Intelligent Discovery and Design of Supercapacitor Materials
-        </h1>
-
-        <!-- Numbered Institutions / Colleges -->
-        <div class="affiliations-list">
-          <span class="affiliation-item">
-            <sup>1</sup><a href="https://cecs.vinuni.edu.vn/" target="_blank" rel="noopener">College of Engineering and Computer Science</a>
-          </span>
-          <span class="affiliation-item">
-            <sup>2</sup><a href="https://cmit.vinuni.edu.vn/" target="_blank" rel="noopener">Center for Materials Innovation &amp; Technology</a>
-          </span>
-        </div>
-
-        <!-- Navigation Pill Buttons -->
-        <div class="publication-links">
-          <a href="#overview" class="nav-pill-btn">
-            <i class="fa-solid fa-file-lines"></i>
-            <span>Overview</span>
-          </a>
-          <a href="#methodology" class="nav-pill-btn">
-            <i class="fa-solid fa-diagram-project"></i>
-            <span>Framework</span>
-          </a>
-          <a href="#publications" class="nav-pill-btn">
-            <i class="fa-solid fa-book-open"></i>
-            <span>Publications</span>
-          </a>
-          <a href="#team" class="nav-pill-btn">
-            <i class="fa-solid fa-users"></i>
-            <span>Team</span>
-          </a>
-          <a href="#contact-footer" class="nav-pill-btn">
-            <i class="fa-solid fa-envelope"></i>
-            <span>Contact</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         PROJECT OVERVIEW SECTION
-         ====================================================================== -->
+    <!-- 1. PROJECT OVERVIEW -->
     <section id="overview" class="section-band bg-light">
-      <div class="container">
+      <div class="main-compact-container">
         <h2 class="section-title">Project Overview</h2>
         <div class="overview-content">
           <p>
@@ -808,75 +829,73 @@
       </div>
     </section>
 
-    <!-- ======================================================================
-         CLOSED-LOOP FRAMEWORK & WORK PACKAGES
-         ====================================================================== -->
+    <!-- 2. RESEARCH FRAMEWORK (Compact 820px Width + Vertical Flow) -->
     <section id="methodology" class="section-band bg-white">
-      <div class="container">
+      <div class="main-compact-container">
         <h2 class="section-title">Research Framework</h2>
 
-        <!-- Figure 1 Architecture Diagram -->
+        <!-- Compact Figure 1 Architecture Diagram (Sized for 820px Container) -->
         <div class="architecture-box">
           <div class="arch-svg-wrapper">
-            <svg viewBox="0 0 960 280" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VINMATICS-SC Closed-Loop Architecture">
+            <svg viewBox="0 0 760 250" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VINMATICS-SC Closed-Loop Architecture">
               <defs>
                 <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                   <path d="M 0 1 L 8 5 L 0 9 z" fill="#1d63dc"/>
                 </marker>
                 <marker id="arrow-loop" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+                  <path d="M 0 1 L 8 5 L 0 9 z" fill="#e11d48"/>
                 </marker>
               </defs>
 
-              <!-- Stage 1: WP1 Data Curation -->
-              <rect x="20" y="45" width="200" height="145" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-              <rect x="36" y="60" width="54" height="22" rx="5" fill="#eff6ff"/>
-              <text x="63" y="75" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1d63dc" text-anchor="middle">WP1</text>
-              <text x="36" y="102" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1e293b">Data Curation</text>
-              <text x="36" y="124" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• Literature &amp; Patents</text>
-              <text x="36" y="142" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• MP / AFLOW / OQMD</text>
-              <text x="36" y="160" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• CMIT ELN Schema</text>
+              <!-- Stage 1: WP1 -->
+              <rect x="10" y="30" width="162" height="132" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <rect x="22" y="42" width="46" height="20" rx="4" fill="#eff6ff"/>
+              <text x="45" y="56" font-family="Inter, sans-serif" font-size="10.5" font-weight="700" fill="#1d63dc" text-anchor="middle">WP1</text>
+              <text x="22" y="80" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#1e293b">Data Curation</text>
+              <text x="22" y="100" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• Literature &amp; Patents</text>
+              <text x="22" y="117" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• MP / AFLOW / OQMD</text>
+              <text x="22" y="134" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• CMIT ELN Schema</text>
 
               <!-- Arrow 1 -> 2 -->
-              <line x1="220" y1="118" x2="258" y2="118" stroke="#1d63dc" stroke-width="2" marker-end="url(#arrow)"/>
+              <line x1="172" y1="96" x2="198" y2="96" stroke="#1d63dc" stroke-width="2" marker-end="url(#arrow)"/>
 
-              <!-- Stage 2: WP2 Physics Simulation -->
-              <rect x="265" y="45" width="205" height="145" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-              <rect x="281" y="60" width="54" height="22" rx="5" fill="#eff6ff"/>
-              <text x="308" y="75" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1d63dc" text-anchor="middle">WP2</text>
-              <text x="281" y="102" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1e293b">DFT / MD &amp; MLIPs</text>
-              <text x="281" y="124" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• VASP &amp; Quantum ESPRESSO</text>
-              <text x="281" y="142" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• Constant-Potential MD</text>
-              <text x="281" y="160" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• Fine-Tuned MLIP Surrogates</text>
+              <!-- Stage 2: WP2 -->
+              <rect x="204" y="30" width="166" height="132" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <rect x="216" y="42" width="46" height="20" rx="4" fill="#eff6ff"/>
+              <text x="239" y="56" font-family="Inter, sans-serif" font-size="10.5" font-weight="700" fill="#1d63dc" text-anchor="middle">WP2</text>
+              <text x="216" y="80" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#1e293b">DFT / MD &amp; MLIPs</text>
+              <text x="216" y="100" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• VASP &amp; QE DFT</text>
+              <text x="216" y="117" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• Constant-Potential MD</text>
+              <text x="216" y="134" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• Fine-Tuned MLIPs</text>
 
               <!-- Arrow 2 -> 3 -->
-              <line x1="470" y1="118" x2="508" y2="118" stroke="#1d63dc" stroke-width="2" marker-end="url(#arrow)"/>
+              <line x1="370" y1="96" x2="396" y2="96" stroke="#1d63dc" stroke-width="2" marker-end="url(#arrow)"/>
 
-              <!-- Stage 3: WP3 Self-Learning AutoML -->
-              <rect x="515" y="45" width="200" height="145" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-              <rect x="531" y="60" width="54" height="22" rx="5" fill="#eff6ff"/>
-              <text x="558" y="75" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1d63dc" text-anchor="middle">WP3</text>
-              <text x="531" y="102" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1e293b">AutoML Prediction</text>
-              <text x="531" y="124" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• GBDT, GNNs &amp; Multi-Task NN</text>
-              <text x="531" y="142" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• Calibrated Uncertainty</text>
-              <text x="531" y="160" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• SHAP Physical Rules</text>
+              <!-- Stage 3: WP3 -->
+              <rect x="402" y="30" width="162" height="132" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+              <rect x="414" y="42" width="46" height="20" rx="4" fill="#eff6ff"/>
+              <text x="437" y="56" font-family="Inter, sans-serif" font-size="10.5" font-weight="700" fill="#1d63dc" text-anchor="middle">WP3</text>
+              <text x="414" y="80" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#1e293b">AutoML Models</text>
+              <text x="414" y="100" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• GBDT, GNN &amp; Multi-Task</text>
+              <text x="414" y="117" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• Calibrated Uncertainty</text>
+              <text x="414" y="134" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• SHAP Design Rules</text>
 
               <!-- Arrow 3 -> 4 -->
-              <line x1="715" y1="118" x2="753" y2="118" stroke="#1d63dc" stroke-width="2" marker-end="url(#arrow)"/>
+              <line x1="564" y1="96" x2="590" y2="96" stroke="#1d63dc" stroke-width="2" marker-end="url(#arrow)"/>
 
-              <!-- Stage 4: WP4 & WP5 Active Learning & Lab Loop -->
-              <rect x="760" y="45" width="180" height="145" rx="12" fill="#fff1f2" stroke="#fecdd3" stroke-width="1.5"/>
-              <rect x="776" y="60" width="82" height="22" rx="5" fill="#ffe4e6"/>
-              <text x="817" y="75" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#e11d48" text-anchor="middle">WP4 &amp; WP5</text>
-              <text x="776" y="102" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1e293b">Active Lab Loop</text>
-              <text x="776" y="124" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• Pareto BO (qNEHVI)</text>
-              <text x="776" y="142" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• Synthesis &amp; 2-Electrode</text>
-              <text x="776" y="160" font-family="Inter, sans-serif" font-size="11.5" fill="#475569">• 4 Device KPIs Validation</text>
+              <!-- Stage 4: WP4 & WP5 -->
+              <rect x="596" y="30" width="154" height="132" rx="10" fill="#fff1f2" stroke="#fecdd3" stroke-width="1.5"/>
+              <rect x="608" y="42" width="72" height="20" rx="4" fill="#ffe4e6"/>
+              <text x="644" y="56" font-family="Inter, sans-serif" font-size="10.5" font-weight="700" fill="#e11d48" text-anchor="middle">WP4 &amp; WP5</text>
+              <text x="608" y="80" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#1e293b">Active Lab Loop</text>
+              <text x="608" y="100" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• Pareto BO (qNEHVI)</text>
+              <text x="608" y="117" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• Synthesis &amp; 2-Electrode</text>
+              <text x="608" y="134" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">• 4 Device KPIs</text>
 
-              <!-- Closed-Loop Feedback Path (WP5 -> WP1/WP3 Retrain) -->
-              <path d="M 850 190 L 850 238 L 120 238 L 120 196" fill="none" stroke="#f43f5e" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-loop)"/>
-              <rect x="355" y="224" width="250" height="26" rx="13" fill="#fff1f2" stroke="#fecdd3"/>
-              <text x="480" y="241" font-family="Inter, sans-serif" font-size="11.5" font-weight="600" fill="#e11d48" text-anchor="middle">Closed-Loop Experimental Feedback &amp; Retrain</text>
+              <!-- Closed-Loop Feedback Path -->
+              <path d="M 673 162 L 673 210 L 91 210 L 91 168" fill="none" stroke="#e11d48" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow-loop)"/>
+              <rect x="260" y="197" width="240" height="24" rx="12" fill="#fff1f2" stroke="#fecdd3"/>
+              <text x="380" y="213" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#e11d48" text-anchor="middle">Closed-Loop Experimental Feedback &amp; Retrain</text>
             </svg>
           </div>
           <p class="arch-caption">
@@ -884,46 +903,54 @@
           </p>
         </div>
 
-        <!-- 5 Work Packages Summary Grid -->
-        <div class="wp-grid">
-          <div class="wp-card">
-            <span class="wp-tag">WP1 · Data Foundation</span>
-            <h4>Data Ingestion &amp; Harmonisation</h4>
+        <!-- 5 Work Packages Stacked Vertically (Flowing Downward in the 820px Column) -->
+        <div class="wp-vertical-stack">
+          <div class="wp-card-row">
+            <div class="wp-card-header">
+              <span class="wp-tag">WP1 · Data Foundation</span>
+              <h4>Data Ingestion &amp; Harmonisation</h4>
+            </div>
             <p>Aggregates literature, patents, open thermodynamic databases (Materials Project, AFLOW, OQMD, NOMAD), and internal CMIT experimental records into a context-aware ontology capturing electrode formulation, electrolyte, and cell configuration.</p>
           </div>
 
-          <div class="wp-card">
-            <span class="wp-tag">WP2 · Physics Simulation</span>
-            <h4>High-Throughput DFT, MD &amp; MLIPs</h4>
+          <div class="wp-card-row">
+            <div class="wp-card-header">
+              <span class="wp-tag">WP2 · Physics Simulation</span>
+              <h4>High-Throughput DFT, MD &amp; MLIPs</h4>
+            </div>
             <p>Automates prototype-aware structure generation (including SQS for disordered solid solutions), VASP/Quantum ESPRESSO electronic structure, constant-potential LAMMPS interface MD, and fine-tuned universal MLIPs (MACE, CHGNet, MatterSim).</p>
           </div>
 
-          <div class="wp-card">
-            <span class="wp-tag">WP3 · Surrogate Modeling</span>
-            <h4>Uncertainty-Calibrated AutoML</h4>
+          <div class="wp-card-row">
+            <div class="wp-card-header">
+              <span class="wp-tag">WP3 · Surrogate Modeling</span>
+              <h4>Uncertainty-Calibrated AutoML</h4>
+            </div>
             <p>Trains gradient-boosted trees, crystal graph neural networks (GNNs), and multi-task neural networks on material-family-grouped splits with calibrated confidence intervals and SHAP physical interpretability.</p>
           </div>
 
-          <div class="wp-card">
-            <span class="wp-tag">WP4 · Experiment Planning</span>
-            <h4>Safety-Constrained Bayesian Planner</h4>
+          <div class="wp-card-row">
+            <div class="wp-card-header">
+              <span class="wp-tag">WP4 · Experiment Planning</span>
+              <h4>Safety-Constrained Bayesian Planner</h4>
+            </div>
             <p>Performs multi-objective Bayesian optimization (qNEHVI) to maximize energy density and power density along the Pareto front while enforcing hard feasibility constraints on cycle-life retention, thermodynamic stability, and aqueous safety.</p>
           </div>
 
-          <div class="wp-card">
-            <span class="wp-tag">WP5 · Experimental Loop</span>
-            <h4>Wet-Lab Synthesis &amp; Device Testing</h4>
+          <div class="wp-card-row">
+            <div class="wp-card-header">
+              <span class="wp-tag">WP5 · Experimental Loop</span>
+              <h4>Wet-Lab Synthesis &amp; Device Testing</h4>
+            </div>
             <p>Synthesizes AI-recommended electrodes, characterizes phase and surface chemistry (XRD, SEM/EDS, XPS), and validates symmetric/asymmetric two-electrode devices across energy density, power density, 10,000-cycle retention, and safety.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ======================================================================
-         PUBLICATIONS SECTION
-         ====================================================================== -->
+    <!-- 3. PUBLICATIONS SECTION (Compact 820px Width) -->
     <section id="publications" class="section-band bg-light">
-      <div class="container">
+      <div class="main-compact-container">
         <h2 class="section-title">Publications</h2>
         <div class="publications-empty-card">
           <i class="fa-regular fa-file-lines"></i>
@@ -932,259 +959,233 @@
       </div>
     </section>
 
-    <!-- ======================================================================
-         TEAM MEMBERS SECTION (Version 3 Layout)
-         ====================================================================== -->
+    <!-- 4. TEAM MEMBERS SECTION (CMIT Square Portraits, Horizontal Slider Row + Researchers Below) -->
     <section id="team" class="section-band bg-white">
-      <div class="container">
+      <div class="main-compact-container">
         <h2 class="section-title">Team Members</h2>
 
         <h3 class="team-group-heading">Principal Investigators &amp; Core Faculty</h3>
-        <div class="team-grid">
 
-          <!-- 1. Asst. Prof. Dung D. Le -->
-          <div class="team-card">
-            <a href="https://andrew-dungle.github.io/" target="_blank" rel="noopener" class="team-avatar-link" title="Asst. Prof. Dung D. Le">
-              <img
-                id="avatar-dung"
-                class="team-avatar-img"
-                src="https://vinuni-medical-mt.github.io/static/images/dung.webp"
-                data-profile-url="https://andrew-dungle.github.io/"
-                onerror="this.onerror=null;this.src='https://placehold.co/256x256/1b365d/ffffff?text=Dung+D.+Le';"
-                alt="Asst. Prof. Dung D. Le">
-            </a>
-            <a href="https://andrew-dungle.github.io/" target="_blank" rel="noopener" class="team-member-name">
-              Asst. Prof. Dung D. Le
-            </a>
-            <p class="team-member-role">Project PI</p>
+        <div class="team-slider-wrap">
+          <button type="button" class="slider-arrow-btn prev" id="teamPrevBtn" aria-label="Previous team members">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="team-horizontal-track" id="teamSliderTrack">
+
+            <!-- 1. Asst. Prof. Dung D. Le (First in Row) -->
+            <div class="cmit-person-card">
+              <a href="https://andrew-dungle.github.io/" target="_blank" rel="noopener" class="cmit-photo-link" title="Asst. Prof. Dung D. Le">
+                <img
+                  class="cmit-photo-img"
+                  src="https://vinuni.edu.vn/wp-content/uploads/2021/09/Le-Duy-Dung.png"
+                  onerror="this.onerror=null;this.src='https://vinuni-medical-mt.github.io/static/images/dung.webp';"
+                  alt="Asst. Prof. Dung D. Le">
+              </a>
+              <div class="cmit-card-body">
+                <a href="https://andrew-dungle.github.io/" target="_blank" rel="noopener" class="cmit-person-name">
+                  Asst. Prof. Dung D. Le
+                </a>
+                <p class="cmit-person-role">Project PI</p>
+                <p class="cmit-person-dept">College of Engineering &amp; Computer Science</p>
+              </div>
+            </div>
+
+            <!-- 2. Assistant Professor Vu Minh Canh -->
+            <div class="cmit-person-card">
+              <a href="https://vinuni.edu.vn/people/vu-minh-canh/" target="_blank" rel="noopener" class="cmit-photo-link" title="Asst. Prof. Vu Minh Canh">
+                <img
+                  class="cmit-photo-img"
+                  src="https://vinuni.edu.vn/wp-content/uploads/2026/06/Vu-Minh-Canh-1.png"
+                  onerror="if(!this.dataset.tried2023){this.dataset.tried2023='1';this.src='https://vinuni.edu.vn/wp-content/uploads/2023/06/Vu-Minh-Canh-1.png';}else{this.onerror=null;this.src='https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=H2h5eN8AAAAJ';}"
+                  alt="Asst. Prof. Vu Minh Canh">
+              </a>
+              <div class="cmit-card-body">
+                <a href="https://vinuni.edu.vn/people/vu-minh-canh/" target="_blank" rel="noopener" class="cmit-person-name">
+                  Asst. Prof. Vu Minh Canh
+                </a>
+                <p class="cmit-person-role">Project Co-PI</p>
+                <p class="cmit-person-dept">College of Engineering &amp; Computer Science</p>
+              </div>
+            </div>
+
+            <!-- 3. Assistant Professor Le Phuoc Anh -->
+            <div class="cmit-person-card">
+              <a href="https://vinuni.edu.vn/people/le-phuoc-anh/" target="_blank" rel="noopener" class="cmit-photo-link" title="Asst. Prof. Le Phuoc Anh">
+                <img
+                  class="cmit-photo-img"
+                  src="https://vinuni.edu.vn/wp-content/uploads/2026/06/Profile-pic-18.png"
+                  onerror="if(!this.dataset.tried2023){this.dataset.tried2023='1';this.src='https://vinuni.edu.vn/wp-content/uploads/2023/06/Profile-pic-18.png';}else{this.onerror=null;this.src='https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=bZc_pb4AAAAJ';}"
+                  alt="Asst. Prof. Le Phuoc Anh">
+              </a>
+              <div class="cmit-card-body">
+                <a href="https://vinuni.edu.vn/people/le-phuoc-anh/" target="_blank" rel="noopener" class="cmit-person-name">
+                  Asst. Prof. Le Phuoc Anh
+                </a>
+                <p class="cmit-person-role">Project Co-PI</p>
+                <p class="cmit-person-dept">College of Engineering &amp; Computer Science</p>
+              </div>
+            </div>
+
+            <!-- 4. Assistant Professor Nguyen Dang Tung -->
+            <div class="cmit-person-card">
+              <a href="https://vinuni.edu.vn/people/nguyen-dang-tung-phd/" target="_blank" rel="noopener" class="cmit-photo-link" title="Asst. Prof. Nguyen Dang Tung">
+                <img
+                  class="cmit-photo-img"
+                  src="https://vinuni.edu.vn/wp-content/uploads/2024/02/Thiet-ke-chua-co-ten-2.png"
+                  onerror="this.onerror=null;this.src='https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=3OEhjvkAAAAJ';"
+                  alt="Asst. Prof. Nguyen Dang Tung">
+              </a>
+              <div class="cmit-card-body">
+                <a href="https://vinuni.edu.vn/people/nguyen-dang-tung-phd/" target="_blank" rel="noopener" class="cmit-person-name">
+                  Asst. Prof. Nguyen Dang Tung
+                </a>
+                <p class="cmit-person-role">Project Member</p>
+                <p class="cmit-person-dept">College of Engineering &amp; Computer Science</p>
+              </div>
+            </div>
+
           </div>
 
-          <!-- 2. Assistant Professor Vu Minh Canh -->
-          <div class="team-card">
-            <a href="https://vinuni.edu.vn/people/vu-minh-canh/" target="_blank" rel="noopener" class="team-avatar-link" title="Asst. Prof. Vu Minh Canh">
-              <img
-                id="avatar-canh"
-                class="team-avatar-img"
-                src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=H2h5eN8AAAAJ"
-                data-profile-url="https://vinuni.edu.vn/people/vu-minh-canh/"
-                onerror="this.onerror=null;this.src='https://placehold.co/256x256/1b365d/ffffff?text=Vu+Minh+Canh';"
-                alt="Asst. Prof. Vu Minh Canh">
-            </a>
-            <a href="https://vinuni.edu.vn/people/vu-minh-canh/" target="_blank" rel="noopener" class="team-member-name">
-              Asst. Prof. Vu Minh Canh
-            </a>
-            <p class="team-member-role">Project Co-PI</p>
-          </div>
-
-          <!-- 3. Assistant Professor Le Phuoc Anh -->
-          <div class="team-card">
-            <a href="https://vinuni.edu.vn/people/le-phuoc-anh/" target="_blank" rel="noopener" class="team-avatar-link" title="Asst. Prof. Le Phuoc Anh">
-              <img
-                id="avatar-anh"
-                class="team-avatar-img"
-                src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=bZc_pb4AAAAJ"
-                data-profile-url="https://vinuni.edu.vn/people/le-phuoc-anh/"
-                onerror="this.onerror=null;this.src='https://placehold.co/256x256/1b365d/ffffff?text=Le+Phuoc+Anh';"
-                alt="Asst. Prof. Le Phuoc Anh">
-            </a>
-            <a href="https://vinuni.edu.vn/people/le-phuoc-anh/" target="_blank" rel="noopener" class="team-member-name">
-              Asst. Prof. Le Phuoc Anh
-            </a>
-            <p class="team-member-role">Project Co-PI</p>
-          </div>
-
-          <!-- 4. Assistant Professor Nguyen Dang Tung -->
-          <div class="team-card">
-            <a href="https://vinuni.edu.vn/people/nguyen-dang-tung-phd/" target="_blank" rel="noopener" class="team-avatar-link" title="Asst. Prof. Nguyen Dang Tung">
-              <img
-                id="avatar-tung"
-                class="team-avatar-img"
-                src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=3OEhjvkAAAAJ"
-                data-profile-url="https://vinuni.edu.vn/people/nguyen-dang-tung-phd/"
-                onerror="this.onerror=null;this.src='https://placehold.co/256x256/1b365d/ffffff?text=Nguyen+Dang+Tung';"
-                alt="Asst. Prof. Nguyen Dang Tung">
-            </a>
-            <a href="https://vinuni.edu.vn/people/nguyen-dang-tung-phd/" target="_blank" rel="noopener" class="team-member-name">
-              Asst. Prof. Nguyen Dang Tung
-            </a>
-            <p class="team-member-role">Project Member</p>
-          </div>
-
+          <button type="button" class="slider-arrow-btn next" id="teamNextBtn" aria-label="Next team members">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
+
+        <!-- Researchers Section Below Faculty -->
+        <h3 class="team-group-heading">Researchers</h3>
+        <div class="researchers-box">
+          Graduate students, undergraduate researchers, and research assistants at CECS &amp; CMIT, VinUniversity.
+        </div>
+
       </div>
     </section>
+
   </main>
 
   <!-- ========================================================================
-       FOOTER WITH FADED VINUNI CAMPUS BACKGROUND (Version 3 / Image 2 Style)
+       COMPACT CMIT-STYLE FOOTER (Official CMIT Logo + ">" Chevrons + Contact)
        ======================================================================== -->
-  <footer id="contact-footer" class="vinuni-campus-footer">
-    <!-- Faded VinUniversity Campus Background -->
-    <div class="footer-campus-bg" id="footerCampusBg" data-campus-source="https://admissions.vinuni.edu.vn/tuition-fee/undergraduate/"></div>
+  <footer id="contact-footer" class="cmit-footer">
+    <div class="cmit-footer-bg"></div>
 
-    <!-- Architectural Campus Skyline Silhouette Layer (Buildings, Gate Arch & Clock Tower) -->
-    <svg class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-25 z-[1]" viewBox="0 0 1440 310" preserveAspectRatio="xMidYBottom slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g fill="#0b254d">
-        <rect x="440" y="95" width="58" height="215" rx="2"/>
-        <rect x="512" y="115" width="54" height="195" rx="2"/>
-        <rect x="580" y="102" width="64" height="208" rx="2"/>
-        <rect x="658" y="125" width="55" height="185" rx="2"/>
-        <rect x="755" y="175" width="460" height="135"/>
-        <polygon points="885,175 965,128 1045,175"/>
-        <rect x="930" y="210" width="70" height="100" rx="35" fill="#1b3f73"/>
-        <rect x="1245" y="120" width="95" height="190"/>
-        <rect x="1262" y="75" width="60" height="45"/>
-        <rect x="1278" y="38" width="28" height="37"/>
-        <polygon points="1278,38 1292,6 1306,38"/>
-      </g>
-    </svg>
-
-    <div class="footer-campus-overlay"></div>
-
-    <!-- Diagonal Dark-Blue Left Panel -->
-    <div class="footer-left-wedge"></div>
-
-    <div class="footer-inner">
-      <!-- Left Column: VinUni V Emblem + Brand + Copyright -->
-      <div class="footer-brand-col">
-        <a href="https://cmit.vinuni.edu.vn/" target="_blank" rel="noopener" class="footer-brand-logo">
-          <!-- White VinUni Emblem Vector -->
-          <svg class="footer-v-emblem" viewBox="0 0 64 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="8,4 24,20 24,36 8,20" fill="#ffffff" opacity="0.85"/>
-            <polygon points="8,22 32,48 56,22 56,6 32,32 8,6" fill="#ffffff"/>
-          </svg>
-          <span class="footer-brand-acronym">VINMATICS-SC</span>
-          <span class="footer-brand-sub">Center for Materials Innovation &amp; Technology</span>
+    <div class="cmit-footer-inner">
+      <!-- Column 1: Official CMIT Logo + Copyright -->
+      <div class="footer-col-brand">
+        <a href="https://cmit.vinuni.edu.vn/" target="_blank" rel="noopener" class="footer-cmit-logo-link" title="Center for Materials Innovation & Technology">
+          <img
+            class="footer-cmit-logo-img"
+            src="https://cmit.vinuni.edu.vn/wp-content/themes/vinuni-smart-health-center/assets/images/logo.jpg"
+            alt="CMIT Logo">
         </a>
-
-        <div class="footer-copyright">
-          <p>Copyright &copy; 2026<br>VinUni.</p>
-          <p>All Right Reserved.</p>
+        <p class="footer-org-subtitle">Center for Materials Innovation &amp; Technology</p>
+        <div class="footer-copy-line">
+          <p>Copyright &copy; 2026 VinUni. All Right Reserved.</p>
           <p><a href="https://vinuni.edu.vn/" target="_blank" rel="noopener">Privacy Policy</a></p>
         </div>
       </div>
 
-      <!-- Right Column: Navigation Links & CMIT Contact Details -->
-      <div class="footer-right-col">
-        <ul class="footer-nav-list">
-          <li><a href="#top">Home</a></li>
-          <li><a href="#overview">Research</a></li>
-          <li><a href="#team">People</a></li>
-        </ul>
+      <!-- Column 2: Navigation Links with ">" Chevrons -->
+      <ul class="footer-chevron-list">
+        <li>
+          <a href="#top">
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#overview">
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Research</span>
+          </a>
+        </li>
+        <li>
+          <a href="#team">
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>People</span>
+          </a>
+        </li>
+      </ul>
 
-        <ul class="footer-nav-list">
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#methodology">Framework</a></li>
-          <li><a href="https://cmit.vinuni.edu.vn/" target="_blank" rel="noopener">CMIT Center</a></li>
-        </ul>
+      <!-- Column 3: Navigation Links with ">" Chevrons -->
+      <ul class="footer-chevron-list">
+        <li>
+          <a href="#publications">
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Publications</span>
+          </a>
+        </li>
+        <li>
+          <a href="#methodology">
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Framework</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://cmit.vinuni.edu.vn/" target="_blank" rel="noopener">
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>CMIT Center</span>
+          </a>
+        </li>
+      </ul>
 
-        <!-- Contact Information Block -->
-        <div class="footer-contact-box">
-          <div class="footer-contact-title">Contact</div>
-          <p class="footer-contact-text">
-            Center for Materials Innovation &amp; Technology, VinUni Campus, Vinhomes Ocean Park, Gia Lam, Hanoi
-          </p>
-          <p class="footer-contact-email">
-            Email: <a href="mailto:cmit@vinuni.edu.vn">cmit@vinuni.edu.vn</a>
-          </p>
-          <div class="footer-social-icons">
-            <a href="https://cmit.vinuni.edu.vn/" target="_blank" rel="noopener" title="CMIT Website" aria-label="CMIT Website">
-              <i class="fa-solid fa-globe"></i>
-            </a>
-            <a href="mailto:cmit@vinuni.edu.vn" title="Email CMIT" aria-label="Email CMIT">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-          </div>
-        </div>
+      <!-- Column 4: Contact Information -->
+      <div class="footer-col-contact">
+        <h4 class="footer-contact-heading">Contact</h4>
+        <p class="footer-contact-address">
+          Center for Materials Innovation &amp; Technology, VinUni Campus, Vinhomes Ocean Park, Gia Lam, Hanoi
+        </p>
+        <p class="footer-contact-mail">
+          Email: <a href="mailto:cmit@vinuni.edu.vn">cmit@vinuni.edu.vn</a>
+        </p>
       </div>
     </div>
 
-    <!-- Bottom-Right Outlined Square Scroll-to-Top Arrow -->
+    <!-- Bottom-Right Square Scroll-to-Top Button -->
     <a href="#top" class="footer-scroll-top" title="Back to top" aria-label="Back to top">
       <i class="fa-solid fa-arrow-up"></i>
     </a>
   </footer>
 
   <!-- ========================================================================
-       JAVASCRIPT: Automatic Faculty Portrait & Campus Background Resolver
+       JAVASCRIPT: Horizontal Team Slider Controls
        ======================================================================== -->
   <script>
     (function () {
-      async function resolveProfilePhoto(imgEl) {
-        const profileUrl = imgEl.getAttribute('data-profile-url');
-        if (!profileUrl) return;
+      const track = document.getElementById('teamSliderTrack');
+      const prevBtn = document.getElementById('teamPrevBtn');
+      const nextBtn = document.getElementById('teamNextBtn');
 
-        const cacheKey = 'vinmatics_avatar_v3_' + profileUrl;
-        try {
-          const cached = localStorage.getItem(cacheKey);
-          if (cached) {
-            imgEl.src = cached;
-            return;
-          }
-        } catch (e) {}
+      if (track && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', function () {
+          track.scrollBy({ left: -220, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', function () {
+          track.scrollBy({ left: 220, behavior: 'smooth' });
+        });
+      }
+    })();
 
-        const proxies = [
-          'https://api.allorigins.win/raw?url=' + encodeURIComponent(profileUrl),
-          'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(profileUrl)
-        ];
+    // Floating Back-to-Top Button
+    (function () {
+      const scrollTopBtn = document.querySelector('.footer-scroll-top');
 
-        for (const proxyUrl of proxies) {
-          try {
-            const resp = await fetch(proxyUrl);
-            if (!resp.ok) continue;
-            const html = await resp.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
+      if (!scrollTopBtn) return;
 
-            let foundSrc = null;
-            const portraitSelectors = [
-              '.people-detail img',
-              '.single-people img',
-              '.entry-content img',
-              'img.wp-post-image',
-              'main img[src*="wp-content/uploads"]',
-              'img[src*="prof"], img[src*="avatar"], .author__avatar img, .profile img',
-              'img[alt*="Le Duy Dung"]',
-              'img[alt*="Dung"]',
-              'img[alt*="Vu Minh Canh"]',
-              'img[alt*="Le Phuoc Anh"]',
-              'img[alt*="Nguyen Dang Tung"]'
-            ];
-
-            for (const sel of portraitSelectors) {
-              const candidate = doc.querySelector(sel);
-              if (candidate) {
-                const rawSrc = candidate.getAttribute('data-src') || candidate.getAttribute('src');
-                if (rawSrc && !rawSrc.includes('logo') && !rawSrc.includes('badge') && !rawSrc.includes('icon')) {
-                  foundSrc = new URL(rawSrc, profileUrl).href;
-                  break;
-                }
-              }
-            }
-
-            if (!foundSrc) {
-              const ogImg = doc.querySelector('meta[property="og:image"]');
-              if (ogImg && ogImg.content && (ogImg.content.includes('wp-content/uploads') || ogImg.content.includes('github.io'))) {
-                foundSrc = new URL(ogImg.content, profileUrl).href;
-              }
-            }
-
-            if (foundSrc) {
-              const testImg = new Image();
-              testImg.onload = function () {
-                imgEl.src = foundSrc;
-                try { localStorage.setItem(cacheKey, foundSrc); } catch (e) {}
-              };
-              testImg.src = foundSrc;
-              return;
-            }
-          } catch (err) {}
+      function toggleScrollButton() {
+        if (window.scrollY > 250) {
+          scrollTopBtn.classList.add('visible');
+        } else {
+          scrollTopBtn.classList.remove('visible');
         }
       }
 
-      document.querySelectorAll('img[data-profile-url]').forEach(function (imgEl) {
-        resolveProfilePhoto(imgEl);
+      window.addEventListener('scroll', toggleScrollButton, {
+        passive: true
       });
+
+      // Check initial scroll position
+      toggleScrollButton();
     })();
   </script>
 </body>
