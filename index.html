@@ -494,36 +494,6 @@
       line-height: 1.35;
     }
 
-    /* Slider Navigation Arrows (< and > like CMIT) */
-    .slider-arrow-btn {
-      position: absolute;
-      top: 38%;
-      transform: translateY(-50%);
-      width: 32px;
-      height: 32px;
-      background: rgba(100, 116, 139, 0.78);
-      color: #ffffff;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10;
-      transition: background 0.2s ease;
-    }
-
-    .slider-arrow-btn:hover {
-      background: var(--vin-navy);
-    }
-
-    .slider-arrow-btn.prev {
-      left: -16px;
-    }
-
-    .slider-arrow-btn.next {
-      right: -16px;
-    }
-
     /* Researchers Subsection Below Faculty */
     .researchers-box {
       background: var(--bg-light);
@@ -738,12 +708,6 @@
       .footer-col-contact {
         grid-column: 1 / -1;
         padding-right: 0;
-      }
-      .slider-arrow-btn.prev {
-        left: 4px;
-      }
-      .slider-arrow-btn.next {
-        right: 4px;
       }
     }
 
@@ -985,10 +949,6 @@
         <h3 class="team-group-heading">Principal Investigators &amp; Core Faculty</h3>
 
         <div class="team-slider-wrap">
-          <button type="button" class="slider-arrow-btn prev" id="teamPrevBtn" aria-label="Previous team members">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-
           <div class="team-horizontal-track" id="teamSliderTrack">
 
             <!-- 1. Asst. Prof. Dung D. Le (First in Row) -->
@@ -1065,9 +1025,6 @@
 
           </div>
 
-          <button type="button" class="slider-arrow-btn next" id="teamNextBtn" aria-label="Next team members">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
         </div>
 
         <!-- Researchers Section Below Faculty -->
