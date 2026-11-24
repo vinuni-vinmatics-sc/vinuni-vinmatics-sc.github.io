@@ -388,7 +388,7 @@
     }
 
     /* ==========================================================================
-       TEAM MEMBERS (CMIT Square Edge-to-Edge Cards + Horizontal Slider Row)
+       TEAM MEMBERS (Responsive Grid: 4 cols desktop -> 2 tablet -> 1 col mobile)
        ========================================================================== */
     .team-group-heading {
       text-align: center;
@@ -398,24 +398,20 @@
       margin: 0.5rem 0 1.35rem;
     }
 
-    .team-slider-wrap {
-      position: relative;
+    .team-grid-wrap {
       width: 100%;
       margin-bottom: 2.5rem;
     }
 
-    .team-horizontal-track {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(175px, 1fr));
-      gap: 1rem;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      padding: 0.25rem 0.1rem 0.6rem;
+    .team-grid-wrap:last-child {
+      margin-bottom: 0;
     }
 
-    .team-horizontal-track::-webkit-scrollbar {
-      display: none;
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      padding: 0.25rem 0.1rem 0.4rem;
     }
 
     /* Square-portrait CMIT style card */
@@ -476,7 +472,7 @@
       transition: color 0.2s ease;
     }
 
-    .cmit-person-name:hover {
+    a.cmit-person-name:hover {
       color: var(--vin-blue-link);
       text-decoration: none;
     }
@@ -492,17 +488,6 @@
       font-size: 0.76rem;
       color: var(--text-muted);
       line-height: 1.35;
-    }
-
-    /* Researchers Subsection Below Faculty */
-    .researchers-box {
-      background: var(--bg-light);
-      border: 1px dashed #cbd5e1;
-      border-radius: 8px;
-      padding: 1.35rem 1.25rem;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.94rem;
     }
 
     /* ==========================================================================
@@ -674,20 +659,13 @@
       text-decoration: none !important;
       z-index: 9999;
       font-size: 1rem;
-
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
       transform: translateY(10px);
-
-      transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease,
-        transform 0.3s ease,
-        background 0.2s ease;
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.2s ease;
     }
 
-    /* Show button when scrolling */
     .footer-scroll-top.visible {
       opacity: 1;
       visibility: visible;
@@ -711,6 +689,13 @@
       }
     }
 
+    @media (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+    }
+
     @media (max-width: 600px) {
       .hero-section {
         padding: 1.75rem 0 2.25rem;
@@ -721,6 +706,13 @@
       .affiliations-list {
         flex-direction: column;
         gap: 0.35rem;
+      }
+      /* Vertical top-to-bottom scroll on phones (no horizontal swipe) */
+      .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 340px;
+        margin: 0 auto;
+        gap: 1.15rem;
       }
       .cmit-footer-inner {
         grid-template-columns: 1fr;
@@ -758,7 +750,7 @@
           <sup>1</sup><a href="https://cecs.vinuni.edu.vn/" target="_blank" rel="noopener">College of Engineering and Computer Science</a>
         </span>
         <span class="affiliation-item">
-          <sup>2</sup><a href="https://cmit.vinuni.edu.vn/" target="_blank" rel="noopener">Center for Materials Innovation &amp; Technology</a>
+          <sup>2</sup><a href="https://cmit.vinuni.edu.vn/" target="_blank" rel="noopener">Center for Materials Innovation & Technology</a>
         </span>
       </div>
 
@@ -799,7 +791,7 @@
         <h2 class="section-title">Project Overview</h2>
         <div class="overview-content">
           <p>
-            We are an interdisciplinary research group at <a href="https://vinuni.edu.vn/" target="_blank" rel="noopener">VinUniversity</a>, Vietnam, across the <a href="https://cecs.vinuni.edu.vn/" target="_blank" rel="noopener">College of Engineering and Computer Science</a> and the <a href="https://cmit.vinuni.edu.vn/" target="_blank" rel="noopener">Center for Materials Innovation &amp; Technology (CMIT)</a>. Our project builds <strong>VINMATICS-SC</strong>, a simulation-coupled vertical AI platform for the intelligent discovery and design of supercapacitor electrode materials and electrolyte systems.
+            We are an interdisciplinary research group at <a href="https://vinuni.edu.vn/" target="_blank" rel="noopener">VinUniversity</a>, Vietnam, across the <a href="https://cecs.vinuni.edu.vn/" target="_blank" rel="noopener">College of Engineering and Computer Science</a> and the <a href="https://cmit.vinuni.edu.vn/" target="_blank" rel="noopener">Center for Materials Innovation & Technology (CMIT)</a>. Our project builds <strong>VINMATICS-SC</strong>, a simulation-coupled vertical AI platform for the intelligent discovery and design of supercapacitor electrode materials and electrolyte systems.
           </p>
           <p>
             Commercial supercapacitors deliver high power density (5–10 kW kg<sup>−1</sup>) and tens of thousands of charge–discharge cycles, yet their energy density (5–10 Wh kg<sup>−1</sup>) remains far lower than that of lithium-ion batteries. Closing this energy-density gap without sacrificing rate capability, cycle life, or intrinsic safety requires navigating a vast combinatorial space across porous and heteroatom-doped carbons, MXenes and 2D materials, transition-metal oxides/sulfides/hydroxides, conductive polymers, and metal-/covalent-organic frameworks (MOFs/COFs) that cannot be searched by trial-and-error synthesis.
@@ -834,7 +826,7 @@
               <rect x="22" y="42" width="46" height="20" rx="3" fill="#eaf0f8"/>
               <text x="45" y="56" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" font-weight="700" fill="#1b365d" text-anchor="middle">WP1</text>
               <text x="22" y="80" font-family="Inter, Noto Sans, sans-serif" font-size="14" font-weight="700" fill="#172b4d">Data Curation</text>
-              <text x="22" y="100" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• Literature &amp; Patents</text>
+              <text x="22" y="100" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• Literature & Patents</text>
               <text x="22" y="117" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• MP / AFLOW / OQMD</text>
               <text x="22" y="134" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• CMIT ELN Schema</text>
 
@@ -845,8 +837,8 @@
               <rect x="204" y="30" width="166" height="132" rx="6" fill="#f5f8fc" stroke="#b9c8dc" stroke-width="1.5"/>
               <rect x="216" y="42" width="46" height="20" rx="3" fill="#eaf0f8"/>
               <text x="239" y="56" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" font-weight="700" fill="#1b365d" text-anchor="middle">WP2</text>
-              <text x="216" y="80" font-family="Inter, Noto Sans, sans-serif" font-size="14" font-weight="700" fill="#172b4d">DFT / MD &amp; MLIPs</text>
-              <text x="216" y="100" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• VASP &amp; QE DFT</text>
+              <text x="216" y="80" font-family="Inter, Noto Sans, sans-serif" font-size="14" font-weight="700" fill="#172b4d">DFT / MD & MLIPs</text>
+              <text x="216" y="100" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• VASP & QE DFT</text>
               <text x="216" y="117" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• Constant-Potential MD</text>
               <text x="216" y="134" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• Fine-Tuned MLIPs</text>
 
@@ -858,7 +850,7 @@
               <rect x="414" y="42" width="46" height="20" rx="3" fill="#eaf0f8"/>
               <text x="437" y="56" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" font-weight="700" fill="#1b365d" text-anchor="middle">WP3</text>
               <text x="414" y="80" font-family="Inter, Noto Sans, sans-serif" font-size="14" font-weight="700" fill="#172b4d">AutoML Models</text>
-              <text x="414" y="100" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• GBDT, GNN &amp; Multi-Task</text>
+              <text x="414" y="100" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• GBDT, GNN & Multi-Task</text>
               <text x="414" y="117" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• Calibrated Uncertainty</text>
               <text x="414" y="134" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• SHAP Design Rules</text>
 
@@ -868,16 +860,16 @@
               <!-- Stage 4: WP4 & WP5 -->
               <rect x="596" y="30" width="154" height="132" rx="6" fill="#fff7f7" stroke="#d99aa6" stroke-width="1.5"/>
               <rect x="608" y="42" width="72" height="20" rx="3" fill="#fce8eb"/>
-              <text x="644" y="56" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" font-weight="700" fill="#9e1b32" text-anchor="middle">WP4 &amp; WP5</text>
+              <text x="644" y="56" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" font-weight="700" fill="#9e1b32" text-anchor="middle">WP4 & WP5</text>
               <text x="608" y="80" font-family="Inter, Noto Sans, sans-serif" font-size="14" font-weight="700" fill="#172b4d">Active Lab Loop</text>
               <text x="608" y="100" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• Pareto BO (qNEHVI)</text>
-              <text x="608" y="117" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• Synthesis &amp; 2-Electrode</text>
+              <text x="608" y="117" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• Synthesis & 2-Electrode</text>
               <text x="608" y="134" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" fill="#40516a">• 4 Device KPIs</text>
 
               <!-- Closed-Loop Feedback Path -->
               <path d="M 673 162 L 673 210 L 91 210 L 91 168" fill="none" stroke="#315b91" stroke-width="1.35" stroke-dasharray="4,4" marker-end="url(#arrow-loop)"/>
               <rect x="260" y="197" width="240" height="24" rx="5" fill="#edf3fa" stroke="#c4d2e3"/>
-              <text x="380" y="213" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" font-weight="600" fill="#9e1b32" text-anchor="middle">Closed-Loop Experimental Feedback &amp; Retrain</text>
+              <text x="380" y="213" font-family="Inter, Noto Sans, sans-serif" font-size="11.5" font-weight="600" fill="#9e1b32" text-anchor="middle">Closed-Loop Experimental Feedback & Retrain</text>
             </svg>
           </div>
           <p class="arch-caption">
@@ -885,12 +877,12 @@
           </p>
         </div>
 
-        <!-- 5 Work Packages Stacked Vertically (Flowing Downward in the 820px Column) -->
+        <!-- 5 Work Packages Stacked Vertically -->
         <div class="wp-vertical-stack">
           <div class="wp-card-row">
             <div class="wp-card-header">
               <span class="wp-tag">WP1 · Data Foundation</span>
-              <h4>Data Ingestion &amp; Harmonisation</h4>
+              <h4>Data Ingestion & Harmonisation</h4>
             </div>
             <p>Aggregates literature, patents, open thermodynamic databases (Materials Project, AFLOW, OQMD, NOMAD), and internal CMIT experimental records into a context-aware ontology capturing electrode formulation, electrolyte, and cell configuration.</p>
           </div>
@@ -898,7 +890,7 @@
           <div class="wp-card-row">
             <div class="wp-card-header">
               <span class="wp-tag">WP2 · Physics Simulation</span>
-              <h4>High-Throughput DFT, MD &amp; MLIPs</h4>
+              <h4>High-Throughput DFT, MD & MLIPs</h4>
             </div>
             <p>Automates prototype-aware structure generation (including SQS for disordered solid solutions), VASP/Quantum ESPRESSO electronic structure, constant-potential LAMMPS interface MD, and fine-tuned universal MLIPs (MACE, CHGNet, MatterSim).</p>
           </div>
@@ -922,7 +914,7 @@
           <div class="wp-card-row">
             <div class="wp-card-header">
               <span class="wp-tag">WP5 · Experimental Loop</span>
-              <h4>Wet-Lab Synthesis &amp; Device Testing</h4>
+              <h4>Wet-Lab Synthesis & Device Testing</h4>
             </div>
             <p>Synthesizes AI-recommended electrodes, characterizes phase and surface chemistry (XRD, SEM/EDS, XPS), and validates symmetric/asymmetric two-electrode devices across energy density, power density, 10,000-cycle retention, and safety.</p>
           </div>
@@ -941,17 +933,17 @@
       </div>
     </section>
 
-    <!-- 4. TEAM MEMBERS SECTION (CMIT Square Portraits, Horizontal Slider Row + Researchers Below) -->
+    <!-- 4. TEAM MEMBERS SECTION (Responsive Top-to-Bottom on Mobile) -->
     <section id="team" class="section-band bg-white">
       <div class="main-compact-container">
         <h2 class="section-title">Team Members</h2>
 
-        <h3 class="team-group-heading">Principal Investigators &amp; Core Faculty</h3>
+        <h3 class="team-group-heading">Principal Investigators & Core Faculty</h3>
 
-        <div class="team-slider-wrap">
-          <div class="team-horizontal-track" id="teamSliderTrack">
+        <div class="team-grid-wrap">
+          <div class="team-grid">
 
-            <!-- 1. Asst. Prof. Dung D. Le (First in Row) -->
+            <!-- 1. Asst. Prof. Dung D. Le -->
             <div class="cmit-person-card">
               <a href="https://andrew-dungle.github.io/" target="_blank" rel="noopener" class="cmit-photo-link" title="Asst. Prof. Dung D. Le">
                 <img
@@ -965,11 +957,11 @@
                   Asst. Prof. Dung D. Le
                 </a>
                 <p class="cmit-person-role">Project PI</p>
-                <p class="cmit-person-dept">College of Engineering &amp; Computer Science</p>
+                <p class="cmit-person-dept">College of Engineering & Computer Science</p>
               </div>
             </div>
 
-            <!-- 2. Assistant Professor Vu Minh Canh -->
+            <!-- 2. Asst. Prof. Vu Minh Canh -->
             <div class="cmit-person-card">
               <a href="https://vinuni.edu.vn/people/vu-minh-canh/" target="_blank" rel="noopener" class="cmit-photo-link" title="Asst. Prof. Vu Minh Canh">
                 <img
@@ -983,11 +975,11 @@
                   Asst. Prof. Vu Minh Canh
                 </a>
                 <p class="cmit-person-role">Project Co-PI</p>
-                <p class="cmit-person-dept">College of Engineering &amp; Computer Science</p>
+                <p class="cmit-person-dept">College of Engineering & Computer Science</p>
               </div>
             </div>
 
-            <!-- 3. Assistant Professor Le Phuoc Anh -->
+            <!-- 3. Asst. Prof. Le Phuoc Anh -->
             <div class="cmit-person-card">
               <a href="https://vinuni.edu.vn/people/le-phuoc-anh/" target="_blank" rel="noopener" class="cmit-photo-link" title="Asst. Prof. Le Phuoc Anh">
                 <img
@@ -1001,11 +993,11 @@
                   Asst. Prof. Le Phuoc Anh
                 </a>
                 <p class="cmit-person-role">Project Co-PI</p>
-                <p class="cmit-person-dept">College of Engineering &amp; Computer Science</p>
+                <p class="cmit-person-dept">College of Engineering & Computer Science</p>
               </div>
             </div>
 
-            <!-- 4. Assistant Professor Nguyen Dang Tung -->
+            <!-- 4. Asst. Prof. Nguyen Dang Tung -->
             <div class="cmit-person-card">
               <a href="https://vinuni.edu.vn/people/nguyen-dang-tung-phd/" target="_blank" rel="noopener" class="cmit-photo-link" title="Asst. Prof. Nguyen Dang Tung">
                 <img
@@ -1019,25 +1011,94 @@
                   Asst. Prof. Nguyen Dang Tung
                 </a>
                 <p class="cmit-person-role">Project Member</p>
-                <p class="cmit-person-dept">College of Engineering &amp; Computer Science</p>
+                <p class="cmit-person-dept">College of Engineering & Computer Science</p>
               </div>
             </div>
 
           </div>
-
         </div>
 
         <!-- Researchers Section Below Faculty -->
         <h3 class="team-group-heading">Researchers</h3>
-        <div class="researchers-box">
-          Graduate students, undergraduate researchers, and research assistants at CECS &amp; CMIT, VinUniversity.
+
+        <div class="team-grid-wrap">
+          <div class="team-grid">
+
+            <!-- 1. Nguyen Hong Cuong -->
+            <div class="cmit-person-card">
+              <a href="https://hongcuong-nguyen.github.io/" target="_blank" rel="noopener" class="cmit-photo-link" title="Cuong Hong Nguyen">
+                <img
+                  class="cmit-photo-img"
+                  src="https://drive.google.com/thumbnail?id=1-iCDGq85eYphMMeYESvEQ-BBQSW5pnUM&sz=w800"
+                  referrerpolicy="no-referrer"
+                  onerror="handleResearcherImgError(this, 'HC', 'images/nguyen-hong-cuong.jpg')"
+                  alt="Cuong Hong Nguyen">
+              </a>
+              <div class="cmit-card-body">
+                <a href="https://hongcuong-nguyen.github.io/" target="_blank" rel="noopener" class="cmit-person-name">
+                  Nguyen Hong Cuong
+                </a>
+                <p class="cmit-person-role">Research Assistant</p>
+                <p class="cmit-person-dept">VinUniversity</p>
+              </div>
+            </div>
+
+            <!-- 2. Son Giang Nguyen -->
+            <div class="cmit-person-card">
+              <a href="https://www.linkedin.com/in/son-giang-nguyen-0b7219403/" target="_blank" rel="noopener" class="cmit-photo-link" title="Son Giang Nguyen">
+                <img
+                  class="cmit-photo-img"
+                  src="https://avatars.githubusercontent.com/u/53885553?v=4"
+                  onerror="handleResearcherImgError(this, 'SN')"
+                  alt="Son Giang Nguyen">
+              </a>
+              <div class="cmit-card-body">
+                <a href="https://www.linkedin.com/in/son-giang-nguyen-0b7219403/" target="_blank" rel="noopener" class="cmit-person-name">
+                  Son Giang Nguyen
+                </a>
+                <p class="cmit-person-role">Undergraduate Researcher</p>
+                <p class="cmit-person-dept">B.Sc. in Computer Science, VinUniversity</p>
+              </div>
+            </div>
+
+            <!-- 3. Khiet An Vuong -->
+            <div class="cmit-person-card">
+              <a href="https://www.linkedin.com/in/khiet-an-vuong-865675410/" target="_blank" rel="noopener" class="cmit-photo-link" title="Khiet An Vuong">
+                <img
+                  class="cmit-photo-img"
+                  src="https://cmit.vinuni.edu.vn/wp-content/uploads/2026/11/VUONG-KHIET-AN.jpg"
+                  onerror="handleResearcherImgError(this, 'KV')"
+                  alt="Khiet An Vuong">
+              </a>
+              <div class="cmit-card-body">
+                <a href="https://www.linkedin.com/in/khiet-an-vuong-865675410/" target="_blank" rel="noopener" class="cmit-person-name">
+                  Khiet An Vuong
+                </a>
+                <p class="cmit-person-role">Research Assistant</p>
+                <p class="cmit-person-dept">VinUniversity</p>
+              </div>
+            </div>
+
+            <div class="cmit-person-card">
+              <div class="cmit-photo-link" title="Pham Tang Cat Luong">
+                <img
+                  class="cmit-photo-img"
+                  style="object-position: center 55%;"
+                  src="https://cmit.vinuni.edu.vn/wp-content/uploads/2026/09/Untitled-1707-x-2560-px-3-e1788928655986.png"
+                  onerror="handleResearcherImgError(this, 'PL')"
+                  alt="Pham Tang Cat Luong">
+              </div>
+              <div class="cmit-card-body">
+                <span class="cmit-person-name">
+                  Pham Tang Cat Luong
+                </span>
+                <p class="cmit-person-role">Research Assistant</p>
+                <p class="cmit-person-dept">VinUniversity</p>
+              </div>
+            </div>
+
+          </div>
         </div>
-
-      </div>
-    </section>
-
-  </main>
-
   <!-- ========================================================================
        COMPACT CMIT-STYLE FOOTER (Official CMIT Logo + ">" Chevrons + Contact)
        ======================================================================== -->
@@ -1053,9 +1114,9 @@
             src="https://cmit.vinuni.edu.vn/wp-content/themes/vinuni-smart-health-center/assets/images/logo.jpg"
             alt="CMIT Logo">
         </a>
-        <p class="footer-org-subtitle">Center for Materials Innovation &amp; Technology</p>
+        <p class="footer-org-subtitle">Center for Materials Innovation & Technology</p>
         <div class="footer-copy-line">
-          <p>Copyright &copy; 2026 VinUni. All Right Reserved.</p>
+          <p>Copyright © 2026 VinUni. All Right Reserved.</p>
           <p><a href="https://vinuni.edu.vn/" target="_blank" rel="noopener">Privacy Policy</a></p>
         </div>
       </div>
@@ -1108,7 +1169,7 @@
       <div class="footer-col-contact">
         <h4 class="footer-contact-heading">Contact</h4>
         <p class="footer-contact-address">
-          Center for Materials Innovation &amp; Technology, VinUni Campus, Vinhomes Ocean Park, Gia Lam, Hanoi
+          Center for Materials Innovation & Technology, VinUni Campus, Vinhomes Ocean Park, Gia Lam, Hanoi
         </p>
         <p class="footer-contact-mail">
           Email: <a href="mailto:cmit@vinuni.edu.vn">cmit@vinuni.edu.vn</a>
@@ -1123,28 +1184,23 @@
   </footer>
 
   <!-- ========================================================================
-       JAVASCRIPT: Horizontal Team Slider Controls
+       JAVASCRIPT: Image Fallback & Back-to-Top Button
        ======================================================================== -->
   <script>
-    (function () {
-      const track = document.getElementById('teamSliderTrack');
-      const prevBtn = document.getElementById('teamPrevBtn');
-      const nextBtn = document.getElementById('teamNextBtn');
-
-      if (track && prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', function () {
-          track.scrollBy({ left: -220, behavior: 'smooth' });
-        });
-        nextBtn.addEventListener('click', function () {
-          track.scrollBy({ left: 220, behavior: 'smooth' });
-        });
+    function handleResearcherImgError(img, initials, localFallback) {
+      if (localFallback && !img.dataset.triedLocal) {
+        img.dataset.triedLocal = '1';
+        img.src = localFallback;
+        return;
       }
-    })();
+      img.onerror = null;
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#1b365d"/><text x="50%" y="53%" dominant-baseline="middle" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="130" fill="#ffffff">${initials}</text></svg>`;
+      img.src = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+    }
 
     // Floating Back-to-Top Button
     (function () {
       const scrollTopBtn = document.querySelector('.footer-scroll-top');
-
       if (!scrollTopBtn) return;
 
       function toggleScrollButton() {
@@ -1155,11 +1211,7 @@
         }
       }
 
-      window.addEventListener('scroll', toggleScrollButton, {
-        passive: true
-      });
-
-      // Check initial scroll position
+      window.addEventListener('scroll', toggleScrollButton, { passive: true });
       toggleScrollButton();
     })();
   </script>
